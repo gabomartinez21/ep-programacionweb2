@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductoService } from '../servicios/producto.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-agregar-productos',
   standalone: true,
   imports: [
+    CommonModule,
     FormsModule,           // Para formularios por template
     ReactiveFormsModule
   ],

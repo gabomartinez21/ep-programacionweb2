@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProductoService } from '../servicios/producto.service';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-listar-productos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './listar-productos.component.html',
   styleUrl: './listar-productos.component.css'
 })
@@ -37,6 +38,12 @@ export class ListarProductosComponent {
       this.productosFiltrados = this.productos.filter(producto => producto.categoria === this.categoriaSeleccionada);
       
     }
+  }
+
+  // Método para eliminar un producto
+  deleteProduct(productoId: number) {
+    this.productos = this.productos.filter(producto => producto.id !== productoId); // Elimina el producto del array
+    this.filtrarPorCategoria(); // Actualiza la lista filtrada
   }
 
   // Redirigir al formulario para agregar un nuevo producto

@@ -29,9 +29,7 @@
         <div class="form-group mb-3">
           <label for="descripcion">Descripción</label>
           <textarea id="descripcion" formControlName="descripcion" class="form-control"></textarea>
-          <div *ngIf="productoForm.get('descripcion').invalid && productoForm.get('descripcion').touched" class="text-danger">
-            La descripción es requerida.
-          </div>
+          
         </div>
     
         <button type="submit" class="btn btn-primary" [disabled]="productoForm.invalid">Agregar Producto</button>
